@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="container">
+        <h1>Account Page</h1>
+        <h3> Hello {{ username }} !!! Welcome back !</h3>      
+        <a href="{{url_for('selectquiz')}}" 
+                class="btn btn-outline-secondary btn-sm">Select and take Quiz</a>
+
+        <a href="{{url_for('createquiz')}}" 
+                class="btn btn-outline-secondary btn-sm">CreateQuiz</a>
+        
+        <a href="/archives" 
+                class="btn btn-outline-secondary btn-sm">User Submissions</a>
+        
+        <a href="{{url_for('showallquiztypes')}}" 
+                class="btn btn-outline-secondary btn-sm">Created Quizes</a>
+
+        <a href="{{url_for('sharequizfront')}}"
+                class="btn btn-outline-secondary btn-sm">share quiz</a>
+
+
+        <a href="{{url_for('uploadpage')}}" 
+                class="btn btn-outline-secondary btn-sm">Upload questions</a>
+      </div>
+      
+{% endblock %}

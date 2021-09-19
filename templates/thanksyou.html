@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="container">
+        <h1>Thanks for participation</h1>      
+        <a href = "{{url_for('home')}}">Home</a>
+        {%  if uploaded == "true" %}
+          <p> Created quiz id is {{createdquizid}} </p>
+        {% endif %}
+        
+      </div>
+      
+{% endblock %}

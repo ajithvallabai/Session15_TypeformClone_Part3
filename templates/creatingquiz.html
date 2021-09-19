@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="container">
+        <h1>Create a Quiz </h1>
+        <a href = "{{url_for('createquiz')}}">Create</a>
+
+        
+        <form  METHOD="POST">        
+        
+            <input  type="text" placeholder="your question" name="answer">
+            <input formaction="{{url_for('createquiz')}}" type="submit" value="next" class="btn btn-secondary">
+            <input formaction="{{url_for('createdquizes',id = quiz_id)}}" type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+                
+
+      </div>
+  
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="container">
+        <h1>Quiz page</h1>
+       
+        <br/><br/>
+        
+        <h4>
+            {{ data_quiz }} 
+
+
+            {% if "submit" == button_name %}
+                <form action="{{url_for('thanks')}}" METHOD="POST">
+            {% else %}
+                <form action="{{url_for('quiz')}}" METHOD="POST">
+            {% endif %}
+              <input type="text" placeholder="your answer" name="answer">
+              {% if "submit" == button_name %}
+                  <input type="submit" value={{ button_name }} class="btn btn-secondary">
+              {% else %}
+                  <input type="submit" value={{ button_name }} class="btn btn-secondary">
+              {% endif %}
+            </form>
+        </h4>
+        
+
+        {% if "submit" == button_name %}
+          <a href="{{url_for('thanks')}}" 
+              class="btn btn-outline-secondary btn-sm">{{ button_name }}</a>
+        {% else %}
+          <a href="{{url_for('quiz')}}" 
+          class="btn btn-outline-secondary btn-sm">{{ button_name }}</a>
+        {% endif %}
+      </div>
+      
+{% endblock %}

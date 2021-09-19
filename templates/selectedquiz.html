@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+      <div class="container">
+        
+        <!-- <form action="/quiz" METHOD="POST">
+            <p> 
+                {{ form.id_number.label }} <br>
+                {{ form.id_number(size=30)}}
+            </p>
+            
+            <p> 
+                {{ form.submit() }} 
+            </p>
+        </form> -->
+        <form action="{{url_for('goforquiz')}}" METHOD="POST">
+            <input type="text" placeholder="your answer" name="quiznumber">
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <!-- <a href = "{{url_for('quiz')}}" 
+                class="btn btn-outline-secondary btn-sm">Go for quiz</a> -->
+
+        <br/><br/>
+
+        {% for key in created_quesitons %}
+            <h4>
+                <li> Quiz ID : {{key}} </li>
+            </h4>
+            
+            <ul>
+                {% for each in created_quesitons[key] %}
+                <li>  {{ each }}  </li> 
+                                
+                {% endfor %}
+
+            </ul>
+            
+
+        {% endfor %}
+
+      </div>
+      
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+      <div class="container">
+        <h1>Submited forms...</h1>
+        
+        <br/><br/>
+        {% for key in user_datas %}
+            <h4>
+                <li> Form ID : {{key}} </li>
+            </h4>
+            
+            <ul>
+                {% for each in user_datas[key] %}
+                <li>  {{ each[0] }}  </li> 
+                <ul> <li>  {{each[1] }}</li> </ul>
+                
+                {% endfor %}
+
+            </ul>
+            
+
+        {% endfor %}
+
+      </div>
+      
+{% endblock %}

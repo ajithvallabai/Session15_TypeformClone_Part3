@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+      <h2> Sign Up </h2>
+      <form action="/" METHOD="POST">
+          <p> 
+              {{ form.username.label }} <br>
+              {{ form.username(size=30)}}
+          </p>
+          <p> 
+              {{ form.password.label }} <br>
+              {{ form.password(size=30)}}
+          </p>
+          <p> 
+              {{ form.submit() }} 
+          </p>
+      </form>
+      {% if failure == "true" %}
+            <p> username or password is incorrect </p>
+      {% endif %}
+      
+{% endblock %}

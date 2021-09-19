@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+      <div class="container">
+        <h1>Created quizes ...</h1>
+        
+        <br/><br/>
+        {% for key in created_quesitons %}
+            <h4>
+                <li> Quiz ID : {{key}} </li>
+            </h4>
+            
+            <ul>
+                {% for each in created_quesitons[key] %}
+                <li>  {{ each }}  </li> 
+                                
+                {% endfor %}
+
+            </ul>
+            
+
+        {% endfor %}
+
+      </div>
+      
+{% endblock %}

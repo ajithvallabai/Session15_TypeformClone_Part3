@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="container">
+        <h1>Thanks for choosing </h1>    
+        {%if status == "success" %}  
+          <p> {{ detail }} </p>
+          <a href = "{{url_for('quiz')}}"> Go to quiz here</a>
+        {% else %}
+          <p> {{ detail }} </p>
+          <a href = "{{url_for('selectquiz')}}"> GO back and select correct quiz id </a>
+        {% endif %}
+      </div>
+      
+{% endblock %}
